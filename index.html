@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VizPrint Media</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <style>
+:root {
+  --primary:  #c8a97e;
+  --secondary: #ffe1e1;
+  --accent: #ffeb37;
+ 
+}
+
+.artist-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1rem auto;
+  max-width: 40rem;
+  margin: auto;
+  position: relative;
+  <!--box-shadow: 0.75rem -0.5rem 0 var(--accent), 0 -0.5rem 0 var(--primary);-->
+}
+
+.artist-card__title {
+  margin: 0;
+  grid-column: 1/5;
+  grid-row: 2/span 1;
+  align-self: center;
+  padding: 0.25em;
+  position: relative;
+  z-index: 1;
+  font-size: 9vmin;
+  text-align: center;
+  font-family: "Major Mono Display", monospace;
+  text-transform: uppercase;
+}
+
+.artist-card__img {
+  max-width: 100%;
+  display: block;
+  grid-column: 1/-1;
+  grid-row: 1/3;
+  align-self: center;
+}
+
+@supports (clip-path: circle(25%)) {
+  .artist-card {
+    clip-path: circle(0%);
+    animation: circle-grow 2000ms 450ms forwards;
+  }
+  .artist-card:hover .artist-card__img {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%);
+  }
+
+  .artist-card__img {
+    clip-path: polygon(18.11% 16.5%, 50% 0%, 75% 50%, 54.09% 90.44%, 13.7% 63.94%);
+    transition: clip-path 400ms ease-in-out;
+  }
+
+  .artist-card__title {
+    clip-path: inset(50% 50%);
+    animation: heading-in 400ms 1000ms forwards;
+  }
+}
+@keyframes circle-grow {
+  to {
+    clip-path: circle(100%);
+  }
+}
+@keyframes heading-in {
+  to {
+    clip-path: inset(0% 0%);
+  }
+}
+@supports (mix-blend-mode: darken) {
+  .artist-card {
+    background-image: linear-gradient(to top right, var(--primary) 25%, transparent), radial-gradient(circle at bottom right, transparent 15%;
+  }
+  .artist-card::after {
+    content: "";
+    grid-column: 4/5;
+    grid-row: 1/2;
+    <!--background: linear-gradient(to bottom left, var(--accent) 40%, transparent);-->
+    mix-blend-mode: multiply;
+    clip-path: circle(19%);
+    transition: clip-path 400ms ease-in-out;
+  }
+  .artist-card:hover::after {
+    clip-path: circle(100%);
+  }
+
+  .artist-card__img {
+    mix-blend-mode: multiply;
+    filter: grayscale(1) contrast(1.5) brightness(0.9);
+  }
+}
+@supports (-webkit-text-stroke: 1px black) {
+  .artist-card__title {
+    -webkit-text-stroke: 0.035em #001;
+    color: transparent;
+    text-shadow: 0.075em 0.075em var(--secondary);
+  }
+}
+@media screen and (min-width: 25rem) {
+  .artist-card__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 60%;
+    clip-path: circle(3% at 95%);
+    background-image: linear-gradient(150deg, var(--primary) 30%, var(--secondary) 50%, var(--accent));
+    z-index: -1;
+    transition: clip-path 400ms ease-in-out;
+  }
+  .artist-card:hover .artist-card__title::before {
+    clip-path: circle(100%);
+  }
+}
+
+
+</style>
+<style>
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+}
+ul li {
+  padding: 6px 0;
+}
+ul li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 4px 0;
+  transition: 0.5s;
+}
+ul li a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #c8a97e;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+ul li a:hover {
+  color: #95a5a6;
+}
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+</style>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+  <body>
+    <div class="py-1 bg-black top">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+	    		<div class="col-lg-12 d-block">
+		    		<div class="row d-flex">
+		    			<div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+							 <span><a href="tel://1234567920">+ 91 98840 44522</a></span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span><a href="mailto:vizprintmedia@gmail.com">vizprintmedia@gmail.com</a></span>
+					    </div>
+					    <!--<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+						    <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span></p>
+					    </div>-->
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">VizPrint Media</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="#home" class="nav-link" style="color: #c8a97e">Home</a></li>
+	        	<li class="nav-item" ><a href="#about" class="nav-link" style="color: #c8a97e;">About Us</a></li>
+	        	<li class="nav-item" ><a href="#services" class="nav-link" style="color: #c8a97e">Services</a></li>
+	        	<li class="nav-item" ><a href="#sample" class="nav-link" style="color: #c8a97e">Sample Work</a></li>
+	        	
+	          <li class="nav-item" ><a href="#contact" class="nav-link" style="color: #c8a97e">Contact Us</a></li>
+	         <!-- <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>-->
+	        </ul>
+
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="home-slider owl-carousel js-fullheight" id="home">
+      <div class="slider-item js-fullheight" style="background-image:url(images/image.jpg);" alt="Responsive image">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
+
+            <div class="col-md-12 col-sm-12 text-center ftco-animate">
+            	<span class="subheading">VizPrint Media</span>
+              <h1 class="mb-4">CONTENT CREATORS</h1>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+        
+     <!-- <div class="slider-item js-fullheight" style="background-image: url(images/bg_3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+            <div class="col-md-12 col-sm-12 text-center ftco-animate">
+            	<span class="subheading">Feliciano</span>
+              <h1 class="mb-4">Delicious Specialties</h1>
+            </div>
+
+          </div>
+        </div>
+      </div>-->
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+    	
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="featured">
+    					<h3 style="color: #fff; text-align: center;">How can we help you?</h3>
+
+    					<div class="row">
+
+    						<div class="col-md-3">
+    							<div class="featured-menus ftco-animate">
+			              <div class="menu-img img" style="background-image: url(images/breakfast-3.jpg);"></div>
+			              <div class="text text-center">
+		                  <h3>Think Innovative. Think Different</h3>
+				              <p>Our designs are unique and are crafted 
+</p>
+			              </div>
+			            </div>
+    						</div>
+    						<div class="col-md-3">
+    							<div class="featured-menus ftco-animate">
+			              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+			              <div class="text text-center">
+		                  <h3>Pre-made, well planned</h3>
+				              <p>Powerpoints have become passé.</p>
+			              </div>
+			            </div>
+    						</div>
+    						<div class="col-md-3">
+    							<div class="featured-menus ftco-animate">
+			              <div class="menu-img img" style="background-image: url(images/breakfast-3.jpg);"></div>
+			              <div class="text text-center">
+		                  <h3>We work fast. We work efficiently.</h3>
+				              <p>Vizprint Media prides itself on timely deliveries.</p>
+			              </div>
+			            </div>
+    						</div>
+    						<div class="col-md-3">
+    							<div class="featured-menus ftco-animate">
+			              <div class="menu-img img" style="background-image: url(images/breakfast-4.jpg);"></div>
+			              <div class="text text-center">
+		                  <h3>we help you achieve your goal!</h3>
+				              <p>We believe in regular updates and reviews</p>
+			              </div>
+			            </div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+	
+
+		<section id="about" class="ftco-section ftco-wrap-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 d-flex">
+					<div class="artist-card" style="margin-top:30px;height:600px;">
+  <img class="artist-card__img" src="images/about.jpg"  style="height:700px;">
+</div>
+<div class="artist-card" style="margin-bottom:100px;height:500px;">
+  <img class="artist-card__img" src="images/about-1.jpg"  style="height:700px;">
+</div>
+						<!--<div class="img img-1 mr-md-2" style="background-image: url(images/about.jpg);"></div>
+						<div class="img img-2 ml-md-2" style="background-image: url(images/about-1.jpg);"></div>-->
+					</div>
+					<div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+	          <div class="heading-section mb-4 my-5 my-md-0">
+	          	<span class="subheading">About Us</span>
+	            <!--<h2 class="mb-4">Feliciano Restaurant</h2>-->
+	          </div>
+	          <br>
+	          <p>What started as a passion and way of
+self-expression, became a business opportunity
+in 2015. Always an avid reader and an amateur
+poet, the inspiration to creative something with
+writing was an ever-present drive. As a freelance
+corporate video creator, with a creative set of
+designers, cinematographers and editors, the
+next step was to move into a business identity
+all its own. Thus was born Vizprint Media.</p>
+						<!--<pc class="time">
+							<span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
+							<span><a href="#">+ 1-978-123-4567</a></span>
+						</p>-->
+						<br>
+						<br>
+						 <div class="heading-section mb-4 my-5 my-md-0">
+	          	<span class="subheading">Our Niche</span>
+	            <!--<h2 class="mb-4">Feliciano Restaurant</h2>-->
+	          </div>
+	          <br>
+	          <p>Vizprint Media aims at providing individualistic
+solutions to your corporate and social needs at
+a competitive price. An in-house team makes it
+efficient and cost-effective. Our aim is to provide
+complete print and digital support to the small
+and mid-size companies and be part of their
+growth curve. It gives us immense satisfaction
+to work with NGOs and help in their journey of
+providing care</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<!--<section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+    	<div class="container">
+    		<div class="row d-md-flex">
+    			<div class="col-md-9">
+    				<div class="row d-md-flex align-items-center">
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="18">0</strong>
+		                <span>Years of Experienced</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="100">0</strong>
+		                <span>Menus/Dish</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="50">0</strong>
+		                <span>Staffs</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="15000">0</strong>
+		                <span>Happy Customers</span>
+		              </div>
+		            </div>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-3 text-center text-md-left">
+          	<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          </div>
+        </div>
+    	</div>
+    </section>-->
+
+		<section id="services" class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+            <span class="subheading">Services</span>
+           <!-- <h2 class="mb-4">Catering Services</h2>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-cake"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Corporate Videos</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Advertisements</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+             <!-- <div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-tray"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Shortfilms and Music Videos</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>      
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Print media, Ad films, Promos</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Fund-raiser Videos for NGOs</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Brochure, Pamplets and Fliers</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Invitations and Backdrop Designs for Events</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Newsletters and Magazines</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Content Writing and Editing</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Allied services</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Website designing</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Digital marketing</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <!--<div class="icon d-flex justify-content-center align-items-center">
+                <span class="flaticon-meeting"></span>
+              </div>-->
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Printing</h3>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>    
+          </div>
+          </div>
+      </div>
+    </section>
+    <section id="sample" class="ftco-section">
+    	<div class="container">
+    		<div class="row no-gutters justify-content-center mb-5 pb-2">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Sample work</span>
+           <!-- <h2 class="mb-4">Our Menu</h2>-->
+          </div>
+        </div>
+        <div class="row no-gutters d-flex align-items-stretch">
+        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+              <!--<div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);">-->
+			
+  <div class="artist-card">
+  <img class="artist-card__img" src="images/breakfast-1.jpg" alt="St. Vincent">
+</div>
+  <!--</div>-->
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>India Property</h3>
+		                </div>
+		                <!--<div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>-->
+		              </div>
+		              <p><a href="https://youtu.be/dU2ma8QI1Bw" target="_blank">https://youtu.be/dU2ma8QI1Bw</a></p>
+		              <p><a href="https://youtu.be/NrNI8_9QwuY" target="_blank">https://youtu.be/NrNI8_9QwuY</a></p>
+		             <!-- <p><a href="#" class="btn btn-primary">Order now</a></p>-->
+	              </div>
+              </div>
+            </div>
+        	</div>
+        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+				<div class="artist-card">
+  <img class="artist-card__img" src="images/breakfast-2.jpg" alt="St. Vincent">
+</div>
+             <!-- <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>-->
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>V-Excel Educational Trust</h3>
+		                </div>
+		                <!--<div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>-->
+		              </div>
+		              <p><a href="https://youtu.be/vossCNe2usE" target="_blank">https://youtu.be/vossCNe2usE</a></p>
+		              <!--<p><a href="#" class="btn btn-primary">Order now</a></p>-->
+	              </div>
+              </div>
+            </div>
+        	</div>
+
+        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+				<div class="artist-card">
+  <img class="artist-card__img" src="images/breakfast-3.jpg" alt="St. Vincent">
+</div>
+              <!--<div class="menu-img img order-md-last" style="background-image: url(images/breakfast-3.jpg);"></div>-->
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>Mala Super Market</h3>
+		                </div>
+		                <!--<div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>-->
+		              </div>
+		              <p><a href="https://youtu.be/2Ri9aFvR22k" target="_blank">https://youtu.be/2Ri9aFvR22k</a></p>
+		              <!--<p><a href="#" class="btn btn-primary">Order now</a></p>-->
+	              </div>
+              </div>
+            </div>
+        	</div>
+        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+				<div class="artist-card">
+  <img class="artist-card__img" src="images/breakfast-5.jpg" alt="St. Vincent">
+</div>
+             <!-- <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-5.jpg);"></div>-->
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>Aanmajothi</h3>
+		                </div>
+		               <!-- <div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>-->
+		              </div>
+		              <p><a href="https://youtu.be/b9YfyngX3MI" target="_blank">https://youtu.be/b9YfyngX3MI</a></p>
+		              <p><a href="https://youtu.be/1ezKaDuWzKU" target="_blank">https://youtu.be/1ezKaDuWzKU</a>
+		             <!-- <p><a href="#" class="btn btn-primary">Order now</a></p>-->
+	              </div>
+              </div>
+            </div>
+        	</div>
+        	<!--<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+              <div class="menu-img img" style="background-image: url(images/breakfast-6.jpg);"></div>
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>Grilled Beef with potatoes</h3>
+		                </div>
+		                <div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>
+		              </div>
+		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+	              </div>
+              </div>
+            </div>
+        	</div>
+        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
+              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+              <div class="text d-flex align-items-center">
+								<div>
+	              	<div class="d-flex">
+		                <div class="one-half">
+		                  <h3>Grilled Beef with potatoes</h3>
+		                </div>
+		                <div class="one-forth">
+		                  <span class="price">$29</span>
+		                </div>
+		              </div>
+		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+	              </div>
+              </div>
+            </div>
+        	</div>-->
+        </div>
+    	</div>
+    </section>
+    
+		<!--<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Chef</span>
+            <h2 class="mb-4">Our Master Chef</h2>
+          </div>
+        </div>	
+				<div class="row">
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url(images/chef-4.jpg);"></div>
+							<div class="text pt-4">
+								<h3>John Smooth</h3>
+								<span class="position mb-2">Restaurant Owner</span>
+								<div class="faded">
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url(images/chef-2.jpg);"></div>
+							<div class="text pt-4">
+								<h3>Rebeca Welson</h3>
+								<span class="position mb-2">Head Chef</span>
+								<div class="faded">
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url(images/chef-3.jpg);"></div>
+							<div class="text pt-4">
+								<h3>Kharl Branyt</h3>
+								<span class="position mb-2">Chef</span>
+								<div class="faded">
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url(images/chef-1.jpg);"></div>
+							<div class="text pt-4">
+								<h3>Luke Simon</h3>
+								<span class="position mb-2">Chef</span>
+								<div class="faded">
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ftco-section img" style="background-image: url(images/bg_3.jpg)" data-stellar-background-ratio="0.5">
+			<div class="container">
+				<div class="row d-flex">
+          <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
+          	<div class="heading-section ftco-animate mb-5 text-center">
+	          	<span class="subheading">Book a table</span>
+	            <h2 class="mb-4">Make Reservation</h2>
+	          </div>
+            <form action="#">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" placeholder="Your Name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" placeholder="Your Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" class="form-control" placeholder="Phone">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" class="form-control" id="book_date" placeholder="Date">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Time</label>
+                    <input type="text" class="form-control" id="book_time" placeholder="Time">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Person</label>
+                    <div class="select-wrap one-third">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">Person</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4+</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <div class="form-group text-center">
+                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+			</div>
+		</section>-->
+		
+		<section class="ftco-section testimony-section img">
+			<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Testimony</span>
+            <h2 class="mb-4"></h2>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Clear and effective communication is key for an advertiser and
+Vizprint Media's use of strong, witty, and efficient tools in coming
+up with various content for Layam has proved to be extremely
+fruitful for us.</p>
+                    <p class="name">Sruti Sadasivam</p>
+                    <span class="position">Layam Advertising, Creative Director</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Vizprint Media, Chennai, belonging to Ms Revathi Sanjeevkumar,
+has worked on multiple occasions with Rotary Club of Madras East.They have also been instrumental in
+archiving the 34-year legacy of our club.</p>
+                    <p class="name">R M Narayanan</p>
+                    <span class="position">Rotary Club of Madras East,
+President</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">We were guided very rightly by Mrs. Revathi Sanjeev, of VIZPRINT
+MEDIA, when we were having plans to bring the written work of
+our student as a book. She, not only edited the work but also came
+up with a very novel thought of the book’s design</p>
+                    <p class="name">Radha Nandakumar</p>
+                    <span class="position">Gurukulam, Integrated Center For Children With Special Needs
+Founder Trustee</span>
+                  </div>
+                </div>
+              </div>
+             <!-- <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url(images/person_4.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Rose Henderson</p>
+                    <span class="position">Customer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Ian Boner</p>
+                    <span class="position">Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </section>
+    		<section id="contact" class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex contact-info">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Contact Us</span>
+            
+          </div>
+          <br>
+          <br>
+          <div class="w-100"></div>
+          <div class="col-md-4 d-flex">
+          	<div class="dbox">
+	            <p ><strong>Address:</strong><span style="color: #c8a97e"> No.11,Periyar Salai, T. Nagar, Chennai - 600017</span></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex">
+          	<div class="dbox">
+	            <p><strong>Phone:</strong> <a href="tel://1234567920">+ 91 98840 44522</a></p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex">
+          	<div class="dbox">
+	            <p><strong>Email:</strong> <a href="mailto:vizprintmedia@gmail.com">vizprintmedia@gmail.com</a></p>
+            </div>
+          </div>
+
+         <!-- <div class="col-md-3 d-flex">
+          	<div class="dbox">
+	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </section>
+		
+		<!--<section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+          	<span class="subheading">Blog</span>
+            <h2 class="mb-4">Recent Posts</h2>
+          </div>
+        </div>
+				<div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text pt-3 pb-4 px-4">
+                <div class="meta">
+                  <div><a href="#">Sept. 06, 2019</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                <p class="clearfix">
+                  <a href="#" class="float-left read">Read more</a>
+                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text pt-3 pb-4 px-4">
+                <div class="meta">
+                  <div><a href="#">Sept. 06, 2019</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                <p class="clearfix">
+                  <a href="#" class="float-left read">Read more</a>
+                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text pt-3 pb-4 px-4">
+                <div class="meta">
+                  <div><a href="#">Sept. 06, 2019</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                <p class="clearfix">
+                  <a href="#" class="float-left read">Read more</a>
+                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>-->
+		
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">VizPrint Media</h2>
+              <p>CONTENT CREATORS</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+         <!-- <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Open Hours</h2>
+              <ul class="list-unstyled open-hours">
+                <li class="d-flex"><span>Monday</span><span>9:00 - 24:00</span></li>
+                <li class="d-flex"><span>Tuesday</span><span>9:00 - 24:00</span></li>
+                <li class="d-flex"><span>Wednesday</span><span>9:00 - 24:00</span></li>
+                <li class="d-flex"><span>Thursday</span><span>9:00 - 24:00</span></li>
+                <li class="d-flex"><span>Friday</span><span>9:00 - 02:00</span></li>
+                <li class="d-flex"><span>Saturday</span><span>9:00 - 02:00</span></li>
+                <li class="d-flex"><span>Sunday</span><span> 9:00 - 02:00</span></li>
+              </ul>
+            </div>
+          </div>-->
+         <!-- <div class="col-md-6 col-lg-3">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Instagram</h2>
+              <div class="thumb d-sm-flex">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-1.jpg);">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-2.jpg);">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-3.jpg);">
+	            	</a>
+	            </div>
+	            <div class="thumb d-flex">
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-4.jpg);">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-5.jpg);">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url(images/insta-6.jpg);">
+	            	</a>
+	            </div>
+            </div>
+          </div>-->
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Quick Links</h2>
+            	<ul>
+            		<li><a href="index.html">Home</a></li>
+            		<li><a href="#about">About Us</a></li>
+            		<li><a href="#services">Services</a></li>
+            		<li><a href="#sample">Sample Work</a></li>
+            		<li><a href="#contact">Contact Us</a></li>
+            	</ul>
+            </div>
+          </div>
+           <div class="col-md-6 col-lg-2">
+            <div class="ftco-footer-widget mb-3">
+              <h2 class="ftco-heading-2">Address</h2>
+              <p>No.11, Periyar Salai, T. Nagar, Chennai - 600017</p>
+             
+            </div>
+          
+            
+          </div>
+
+          <div class="col-md-6 col-lg-2">
+            <div class="ftco-footer-widget mb-3">
+              <h2 class="ftco-heading-2">Phone</h2>
+			   <p><a href="tel://1234567920">+ 91 98840 44522</a></p>
+             
+            </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+              <div class="ftco-footer-widget mb-3">
+                <h2 class="ftco-heading-2">Email</h2>
+				<p><a href="mailto:vizprintmedia@gmail.com">vizprintmedia@gmail.com</a></p>
+              
+               
+              </div>
+             
+          </div> 
+          
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by VizPrint Media</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
